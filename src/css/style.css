@@ -1,0 +1,212 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #8C9A91;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Hiragino Sans", "ヒラギノ角ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+}
+
+h1, h2 {
+  font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+  font-weight: normal;
+}
+
+p {
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, calc(100% / 5));
+  grid-template-columns: repeat(auto-fit, calc(100% / 8));
+}
+
+@media screen and (orientation: portrait) {
+  #container {
+    grid-template-rows: repeat(auto-fit, calc(100% / 8));
+    grid-template-columns: repeat(auto-fit, calc(100% / 5));
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100vw 1fr auto;
+  grid-template-columns: 50% 50%;
+}
+
+.thumb {
+  display: grid;
+}
+
+.thumb .title, .thumb .num {
+  z-index: 1;
+  padding: 10px;
+}
+
+.thumb .num {
+  grid-column: 1;
+  grid-row: -1;
+  font-size: 60px;
+  font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+  font-weight: normal;
+}
+
+.thumb .image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  grid-column: 1;
+  grid-row: 1 / 4;
+  grid-auto-rows: 1fr;
+  z-index: 0;
+}
+
+.main-visual {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  grid-template-rows: auto 1fr auto;
+}
+
+.main-visual .title {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 40px;
+}
+
+.main-visual .image {
+  grid-column: 1;
+  grid-row: 1 / 4;
+}
+
+@-webkit-keyframes anime1 {
+  0% {
+    opacity: 0;
+    -webkit-filter: brightness(1.5);
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes anime1 {
+  0% {
+    opacity: 0;
+    -webkit-filter: brightness(1.5);
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+}
+
+.expression {
+  grid-row: 2;
+  grid-column: 1 / 3;
+  padding: 10px;
+}
+
+.expression h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .expression {
+    grid-row: 1;
+    z-index: 1;
+    grid-column: 2 / 3;
+    justify-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+}
+
+nav {
+  padding: 10px;
+  grid-column: 1 / 3;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(4, calc(calc(100% - 20px) / 4));
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  max-width: 630px;
+  justify-self: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+nav .thumb {
+  display: grid;
+  grid-template-rows: auto 30px;
+}
+
+nav .thumb .image {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: auto;
+}
+
+nav .thumb .num {
+  text-align: right;
+  grid-column: 1;
+  grid-row: 2;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+nav .next-button {
+  cursor: pointer;
+  -webkit-filter: brightness(1);
+  filter: brightness(1);
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+}
+
+nav .next-button:hover {
+  -webkit-filter: brightness(1.5);
+  filter: brightness(1.5);
+  -webkit-transition: -webkit-filter 0.4s cubic-bezier(0, 2.5, 0.2, 2.5);
+  transition: -webkit-filter 0.4s cubic-bezier(0, 2.5, 0.2, 2.5);
+  transition: filter 0.4s cubic-bezier(0, 2.5, 0.2, 2.5);
+  transition: filter 0.4s cubic-bezier(0, 2.5, 0.2, 2.5), -webkit-filter 0.4s cubic-bezier(0, 2.5, 0.2, 2.5);
+}
+
+/*# sourceMappingURL=style.css.map */
